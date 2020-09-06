@@ -12,13 +12,11 @@ treelm(model)
 \value{
 A list containing the tree topology and design matrix
 \itemize{
-\item X - the ANOVA design matrix representing the tree
-\item treeMatrix - matrix representing tree structure.
-Rows are leaf nodes. Columns are corresponding branch paths.
+\item X - the ANOVA design matrix for the linear model
 }
 }
 \description{
-The treelm function transforms the rpart or ctree object into a
+The treelm function transforms the fitted rpart or ctree object into a
 design matrix representing the tree structure. The default encoding follows from
 Michael LeBlanc & Robert Tibshirani (1998) Monotone Shrinkage of Trees,
 Journal of Computational and Graphical Statistics,

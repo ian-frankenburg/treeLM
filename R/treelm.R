@@ -22,7 +22,8 @@
 #' treefit <- rpart(y ~ x)
 #' X <- treelm(fit)$X
 #' lmfit <- lm(y ~ X)
-
+#'
+#' @export
 treelm <- function(model){
   if(class(model)=="rpart"){
    # string parsing might take some time for deep trees!

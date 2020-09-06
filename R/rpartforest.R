@@ -18,7 +18,7 @@
 #'
 #' @author Ian Frankenburg
 #'
-
+#' @export
 rpartforest <- function(y, x, test, mtry, ntrees, getlm = F,
                         contrl=rpart.control(minsplit = 5,
                                              minbucket = 1,

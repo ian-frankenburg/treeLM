@@ -17,7 +17,7 @@
 #'
 #' @author Ian Frankenburg
 #'
-
+#' @export
 parseTreeSums <- function(bart_bma){
   foo <- bart_bma$sumoftrees
   bar <- bart_bma$obs_to_termNodesMatrix
