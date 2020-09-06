@@ -23,6 +23,8 @@
 #' X <- treelm(fit)$X
 #' lmfit <- lm(y ~ X)
 #'
+#' @import partykit rpart data.tree stringr
+#'
 #' @export
 treelm <- function(model){
   if(class(model)=="rpart"){

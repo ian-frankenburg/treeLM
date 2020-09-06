@@ -18,6 +18,8 @@
 #'
 #' @author Ian Frankenburg
 #'
+#' @import rpart
+#'
 #' @export
 rpartforest <- function(y, x, test, mtry, ntrees, getlm = F,
                         contrl=rpart.control(minsplit = 5,

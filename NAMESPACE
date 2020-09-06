@@ -3,3 +3,8 @@
 export(parseTreeSums)
 export(rpartforest)
 export(treelm)
+import(bartBMA)
+import(data.tree)
+import(partykit)
+import(rpart)
+import(stringr)
