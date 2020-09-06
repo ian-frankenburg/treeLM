@@ -10,7 +10,7 @@ treelm(model)
 \item{model}{a fitted rpart object or a fitted ctree model}
 }
 \value{
-A list containing the tree topology and design matrix
+A list containing the design matrix
 \itemize{
 \item X - the ANOVA design matrix for the linear model
 }
@@ -24,6 +24,16 @@ Journal of Computational and Graphical Statistics,
 }
 \details{
 Represent a fitted regression or classification tree as an ANOVA model
+}
+\examples{
+\dontrun{
+fit <- rpart(Kyphosis ~ Age + Number + Start, data = kyphosis)
+treelm(fit)
+
+fit <- ctree(Kyphosis ~ Age + Number + Start, data = kyphosis)
+treelm(fit)
+}
+
 }
 \author{
 Ian Frankenburg

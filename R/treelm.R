@@ -11,19 +11,23 @@
 #'
 #' @param model a fitted rpart object or a fitted ctree model
 #'
-#' @return A list containing the tree topology and design matrix
+#' @return A list containing the design matrix
 #' \itemize{
 #'     \item X - the ANOVA design matrix for the linear model
 #' }
 #'
 #' @author Ian Frankenburg
 #'
-#' @example
-#' treefit <- rpart(y ~ x)
-#' X <- treelm(fit)$X
-#' lmfit <- lm(y ~ X)
+#' @examples
+#' \dontrun{
+#' fit <- rpart(Kyphosis ~ Age + Number + Start, data = kyphosis)
+#' treelm(fit)
 #'
-#' @import partykit rpart data.tree stringr
+#' fit <- ctree(Kyphosis ~ Age + Number + Start, data = kyphosis)
+#' treelm(fit)
+#' }
+#'
+#' @import partykit rpart data.tree stringr partykit
 #'
 #' @export
 treelm <- function(model){
@@ -65,8 +69,9 @@ treelm <- function(model){
     leafNodePath <- unlist(splitting.rules[j])
     tree_as_matrix[j, leafPath[[j]]] <- ifelse(leafNodePath==action, -1, 1)
   }
-  X <- tree_as_matrix[as.character(root$fitted$`(fitted)`), ]
+  X <- as.data.frame(tree_as_matrix[as.character(root$fitted$`(fitted)`), ])
   rownames(X) <- 1:nrow(X)
+  colnames(X) <- internal_nodes
   return(list(
     "X"= X
   ))

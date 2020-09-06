@@ -1,9 +1,7 @@
 #' Build a random forest with base learners grown from rpart
 #'
 #' @description
-#' This is a rudimentary implementation of Random Forest using rpart.
-#' It primarily serves as a proof-of-concept to utilize the "treelm" function
-#' to enable the representation of a Random Forest as a collection of design matrices
+#' This is a rudimentary implementation of Random Forest using rpart. It primarily serves as a proof of concept to utilize the "treelm" function to enable the representation of a Random Forest as a collection of linear model design matrices
 #'
 #' @param y - outcome variable
 #' @param x - explanatory covariates
@@ -13,8 +11,7 @@
 #' @param getlm - boolean to indicate whether linear model representation should be computed
 #' @param contrl- control parameters for rpart; refer to that documentation for details
 #'
-#' @return A matrix of predicted values from each base learner as well as
-#' training and testing ANOVA matrices
+#' @return A matrix of predicted values from each base learner as well as ANOVA matrices encoding the training and testing data
 #'
 #' @author Ian Frankenburg
 #'

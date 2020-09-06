@@ -42,13 +42,10 @@ rpartforest(
 \item{contrl-}{control parameters for rpart; refer to that documentation for details}
 }
 \value{
-A matrix of predicted values from each base learner as well as
-training and testing ANOVA matrices
+A matrix of predicted values from each base learner as well as ANOVA matrices encoding the training and testing data
 }
 \description{
-This is a rudimentary implementation of Random Forest using rpart.
-It primarily serves as a proof-of-concept to utilize the "treelm" function
-to enable the representation of a Random Forest as a collection of design matrices
+This is a rudimentary implementation of Random Forest using rpart. It primarily serves as a proof of concept to utilize the "treelm" function to enable the representation of a Random Forest as a collection of linear model design matrices
 }
 \author{
 Ian Frankenburg
