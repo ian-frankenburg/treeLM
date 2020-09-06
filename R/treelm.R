@@ -72,7 +72,5 @@ treelm <- function(model){
   X <- as.data.frame(tree_as_matrix[as.character(root$fitted$`(fitted)`), ])
   rownames(X) <- 1:nrow(X)
   colnames(X) <- internal_nodes
-  return(list(
-    "X"= X
-  ))
+  return(X)
 }
