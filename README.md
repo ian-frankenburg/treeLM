@@ -18,12 +18,12 @@ library(partykit)
 # fit classifcation tree using rpart
 rpart_fit <- rpart(Kyphosis ~ Age + Number + Start, data = kyphosis)
 # design matrix
-X_rpart <- treelm(fit)
+X_rpart <- treelm(rpart_fit)
 
 # fit classifcation tree using conditional inference trees
 ctree_fit <- ctree(Kyphosis ~ Age + Number + Start, data = kyphosis)
 # design matrix
-X_ctree <- treelm(fit)
+X_ctree <- treelm(ctree_fit)
 ```
 ### Regression tree predictions
 ```
