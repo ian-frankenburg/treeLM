@@ -15,7 +15,7 @@ library(treeLM)
 library(rpart)
 library(partykit)
 
-# fit classifcation tree using rpart
+# fit classification tree using rpart
 rpart_fit <- rpart(Kyphosis ~ Age + Number + Start, data = kyphosis)
 # design matrix
 X_rpart <- treelm(rpart_fit)
