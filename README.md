@@ -20,7 +20,7 @@ rpart_fit <- rpart(Kyphosis ~ Age + Number + Start, data = kyphosis)
 # design matrix
 X_rpart <- treelm(rpart_fit)
 
-# fit classifcation tree using conditional inference trees
+# fit classification tree using conditional inference trees
 ctree_fit <- ctree(Kyphosis ~ Age + Number + Start, data = kyphosis)
 # design matrix
 X_ctree <- treelm(ctree_fit)
