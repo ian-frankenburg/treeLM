@@ -69,8 +69,10 @@ treelm <- function(model){
     leafNodePath <- unlist(splitting.rules[j])
     tree_as_matrix[j, leafPath[[j]]] <- ifelse(leafNodePath==action, -1, 1)
   }
-  X <- as.data.frame(tree_as_matrix[as.character(root$fitted$`(fitted)`), ])
+  X <- tree_as_matrix[as.character(root$fitted$`(fitted)`), ]
   rownames(X) <- 1:nrow(X)
-  colnames(X) <- internal_nodes
-  return(X)
+  return(list(
+    "X"= X,
+    "treeMatrix" = tree_as_matrix
+  ))
 }
