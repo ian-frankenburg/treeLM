@@ -30,7 +30,7 @@
 #' @import partykit rpart data.tree stringr partykit
 #'
 #' @export
-treelm <- function(model){
+treelm <- function(model, index){
   if(class(model)=="rpart"){
    # string parsing might take some time for deep trees!
     root <- as.Node(as.party(model))
@@ -42,6 +42,13 @@ treelm <- function(model){
     node_questions <- "<=|>"
     rules <- partykit:::.list.rules.party(model)
     action <- str_extract(node_questions, "<=")
+  }else if(class(model)=="rforest"){
+      # string parsing might take some time for deep trees!
+      model=rfit$trees[[index]]
+      root <- as.Node(model)
+      node_questions <- ">=|<"
+      rules <- partykit:::.list.rules.party(as.party(model))
+      action <- str_extract(node_questions, ">=")
   }else{
     throw("Must supply rpart or ctree fitted model")
   }
